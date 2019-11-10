@@ -1,3 +1,3 @@
-# ursolao-node-api
+# nodeapi
 
 API para acesso a base de dados do Clube do Ursolao.
