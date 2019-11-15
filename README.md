@@ -76,16 +76,11 @@ http://localhost:3000
    * Content-Type = application/json
    
   - Body:
-   * name
    * email
    * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
    
   - Output:
-   * HTTP Status Code: 200 / 404 / 500
+   * HTTP Status Code: 200 / 401 / 500
    * "token"
   ```
   * Search by ID (GET)
@@ -97,18 +92,18 @@ http://localhost:3000
    * Content-Type = application/json
    * x-access-token = [token]
    
-  - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
-   
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * "cli_code"
+   * "cli_name"
+   * "cli_email"
+   * "cli_password"
+   * "cli_countrycode"
+   * "cli_areacode"
+   * "cli_telephone"
+   * "cli_zipcode"
+   * "cli_reputation"
+   * "cli_lastlogin"
   ```
   * Update by ID (POST)
   ```
@@ -120,6 +115,7 @@ http://localhost:3000
    * x-access-token = [token]
    
   - Body:
+   * id
    * name
    * email
    * password
@@ -130,7 +126,6 @@ http://localhost:3000
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
   ```
   * Insert (PUT)
   ```
@@ -151,8 +146,7 @@ http://localhost:3000
    * zipcode
    
   - Output:
-   * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * HTTP Status Code: 200 / 500
   ```
 - Categories of Items
   * Search all (GET)
@@ -164,18 +158,11 @@ http://localhost:3000
    * Content-Type = application/json
    * x-access-token = [token]
    
-  - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
-   
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * "cai_code"
+   * "cai_descr"
+   * "sta_code"
   ```
   * Search by ID (GET)
   ```
@@ -186,18 +173,11 @@ http://localhost:3000
    * Content-Type = application/json
    * x-access-token = [token]
    
-  - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
-   
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * "cai_code"
+   * "cai_descr"
+   * "sta_code"
   ```
   * Delete by ID (DELETE)
   ```
@@ -208,18 +188,8 @@ http://localhost:3000
    * Content-Type = application/json
    * x-access-token = [token]
    
-  - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
-   
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
   ```
   * Update by ID (POST)
   ```
@@ -231,17 +201,12 @@ http://localhost:3000
    * x-access-token = [token]
    
   - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
+   * id
+   * descr
+   * status
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
   ```
   * Insert (PUT)
   ```
@@ -253,17 +218,11 @@ http://localhost:3000
    * x-access-token = [token]
    
   - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
+   * descr
+   * status
    
   - Output:
-   * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * HTTP Status Code: 200 / 500
   ```
 - Items
   * Search by ID (GET)
@@ -275,18 +234,13 @@ http://localhost:3000
    * Content-Type = application/json
    * x-access-token = [token]
    
-  - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
-   
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * "itm_code"
+   * "itm_title"
+   * "itm_descr"
+   * "itm_photo"
+   * "cai_code"
   ```
   * Search by Category (GET)
   ```
@@ -297,18 +251,15 @@ http://localhost:3000
    * Content-Type = application/json
    * x-access-token = [token]
    
-  - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
-   
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * "itm_code"
+   * "itm_title"
+   * "itm_descr"
+   * "itm_photo"
+   * "cai_code"
+   * "cai_descr"
+   * "sta_code"
   ```
   * Delete by ID (DELETE)
   ```
@@ -319,18 +270,8 @@ http://localhost:3000
    * Content-Type = application/json
    * x-access-token = [token]
    
-  - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
-   
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
   ```
   * Update by ID (POST)
   ```
@@ -342,17 +283,14 @@ http://localhost:3000
    * x-access-token = [token]
    
   - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
+   * "id"
+   * "title"
+   * "descr"
+   * "photo"
+   * "category"
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
   ```
   * Insert (PUT)
   ```
@@ -364,17 +302,13 @@ http://localhost:3000
    * x-access-token = [token]
    
   - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
+   * "title"
+   * "descr"
+   * "photo"
+   * "category"
    
   - Output:
-   * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * HTTP Status Code: 200 / 500
   ```
 - Lendings
   * Search by ID (GET)
@@ -386,18 +320,15 @@ http://localhost:3000
    * Content-Type = application/json
    * x-access-token = [token]
    
-  - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
-   
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * "lnd_code"
+   * "lnd_cliowner"
+   * "lnd_clirequester"
+   * "lnd_startdate"
+   * "lnd_enddate"
+   * "lnd_grntmrg"
+   * "sta_code"
   ```
   * Search by Client (GET)
   ```
@@ -408,18 +339,15 @@ http://localhost:3000
    * Content-Type = application/json
    * x-access-token = [token]
    
-  - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
-   
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * "lnd_code"
+   * "lnd_cliowner"
+   * "lnd_clirequester"
+   * "lnd_startdate"
+   * "lnd_enddate"
+   * "lnd_grntmrg"
+   * "sta_code"
   ```
   * Delete by ID (DELETE)
   ```
@@ -430,18 +358,8 @@ http://localhost:3000
    * Content-Type = application/json
    * x-access-token = [token]
    
-  - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
-   
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
   ```
   * Update by ID (UPDATE)
   ```
@@ -453,17 +371,16 @@ http://localhost:3000
    * x-access-token = [token]
    
   - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
+   * id
+   * cliowner
+   * clirequester
+   * startdate
+   * enddate
+   * grntmrg
+   * status
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
   ```
   * Insert (INSERT)
   ```
@@ -475,17 +392,15 @@ http://localhost:3000
    * x-access-token = [token]
    
   - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
+   * cliowner
+   * clirequester
+   * startdate
+   * enddate
+   * grntmrg
+   * status
    
   - Output:
-   * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * HTTP Status Code: 200 / 500
   ```
 - Lending Items
   * Search by ID (GET)
@@ -497,18 +412,11 @@ http://localhost:3000
    * Content-Type = application/json
    * x-access-token = [token]
    
-  - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
-   
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * "lnd_code"
+   * "itm_code"
+   * "sta_code"
   ```
   * Delete by ID (DELETE)
   ```
@@ -520,17 +428,11 @@ http://localhost:3000
    * x-access-token = [token]
    
   - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
+   * id
+   * item
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "token"
   ```
   * Insert (PUT)
   ```
@@ -542,17 +444,12 @@ http://localhost:3000
    * x-access-token = [token]
    
   - Body:
-   * name
-   * email
-   * password
-   * countrycode
-   * areacode
-   * telephone
-   * zipcode
+   * id
+   * item
+   * status
    
   - Output:
-   * HTTP Status Code: 200 / 404 / 500
-   * "token"
+   * HTTP Status Code: 200 / 500
   ```
 
 ## Version
