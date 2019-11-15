@@ -66,7 +66,6 @@ http://localhost:3000
    
   - Output:
    * HTTP Status Code: 200 / 500
-   * "token"
   ```
   * Authentication (POST)
   ```
@@ -96,6 +95,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -117,6 +117,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -138,6 +139,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -160,6 +162,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -181,6 +184,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -202,6 +206,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -223,6 +228,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -244,6 +250,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -266,6 +273,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -287,6 +295,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -308,6 +317,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -329,6 +339,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -350,6 +361,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -372,6 +384,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -393,6 +406,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -414,6 +428,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -435,6 +450,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -456,6 +472,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -478,6 +495,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -499,6 +517,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
@@ -520,6 +539,7 @@ http://localhost:3000
   Parameters:
   - Header:
    * Content-Type = application/json
+   * x-access-token = [token]
    
   - Body:
    * name
