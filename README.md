@@ -9,14 +9,14 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Clone this repository to your local machine:
+Check if you can access the database. If case of disaster, don't worry, you can test with: https://ursolao-api.herokuapp.com
+```
+telnet ursolao.cbuk8awyqduu.us-east-1.rds.amazonaws.com 3306
+```
+If everything is ok, let's clone this repository to your local machine:
 
 ```
 git clone https://github.com/andreamll/ursolao-node-api
-```
-Check if you can access the database. If not, you can visit: https://ursolao-api.herokuapp.com
-```
-telnet ursolao.cbuk8awyqduu.us-east-1.rds.amazonaws.com 3306
 ```
 
 ### Installing
