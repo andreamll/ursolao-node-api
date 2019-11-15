@@ -9,35 +9,38 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+Clone this repository to your local machine:
 
 ```
-Give examples
+git clone https://github.com/andreamll/ursolao-node-api
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
+Access the directory of the project:
 
 ```
-Give the example
+cd ursolao-node-api
 ```
 
-And repeat
+Install all the dependencies on your local machine:
 
 ```
-until finished
+npm install
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Start the project:
+
+```
+npm run start
+```
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+A web page should open in your default browser. If not, just go to: http://localhost:3000/
 
-### Break down into end to end tests
+
+## Endpoints
 
 Explain what these tests test and why
 
@@ -56,6 +59,7 @@ Give an example
 ## Version
 
 1.0.0
+
 
 ## Authors
 
