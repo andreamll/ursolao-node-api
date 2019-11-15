@@ -14,6 +14,10 @@ Clone this repository to your local machine:
 ```
 git clone https://github.com/andreamll/ursolao-node-api
 ```
+Check if you can access the database. If not, you can visit: https://ursolao-api.herokuapp.com
+```
+telnet ursolao.cbuk8awyqduu.us-east-1.rds.amazonaws.com 3306
+```
 
 ### Installing
 
