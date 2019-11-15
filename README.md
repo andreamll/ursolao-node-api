@@ -45,6 +45,7 @@ A web page should open in your default browser. If not, just go to: http://local
 
 
 ## Endpoints
+... where the magic happens...
 
 - API's Status (GET)
 ```
