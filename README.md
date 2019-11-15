@@ -42,32 +42,104 @@ A web page should open in your default browser. If not, just go to: http://local
 
 ## Endpoints
 
-- STATUS DA API	2
-- REGISTRO DE CLIENTE (REGISTER)	3
-- AUTENTICAÇÃO DE CLIENTE (AUTH)	4
-- CONSULTA DE CATEGORIAS (GET)	5
-- CONSULTA DE CATEGORIA POR ID (GET)	6
-- EXCLUSÃO DE CATEGORIA (DELETE)	7
-- ALTERAÇÃO DE CATEGORIA (PUT)	8
-- INCLUSÃO DE CATEGORIA (POST)	9
-- CONSULTA DE CLIENTE POR ID (GET)	10
-- ALTERAÇÃO DE CLIENTE POR ID (PUT)	11
-- INCLUSÃO DE CLIENTE (POST)	12
-- CONSULTA DE ITEMS POR ID (GET)	13
-- CONSULTA DE ITEMS POR CATEGORIA (GET)	14
-- ATUALIZAÇÃO DE ITEM (PUT)	15
-- EXCLUSÃO DE ITEM POR ID (DELETE)	16
-- INCLUSÃO DE ITEM (POST)	17
-- CONSULTA DE EMPRÉSTIMO POR ID (GET)	18
-- CONSULTA DE EMPRÉSTIMO POR CLIENTE (GET)	19
-- EXCLUSÃO DE EMPRÉSTIMO POR ID (DELETE)	20
-- ALTERAÇÃO DE ITEM (PUT)	21
-- INCLUSÃO DE EMPRÉSTIMO (POST)	22
-- CONSULTA DE ITENS DO EMPRÉSTIMO (GET)	23
-- EXCLUSÃO DE ITEM DO EMPRÉSTIMO (DELETE)	24
-- INCLUSÃO DE ITENS NO EMPRÉSTIMO (POST)	25
-
-
+- API's Status (GET)
+```
+http://localhost:3000
+```
+- Clients
+  * Register (GET)
+  ```
+  http://localhost:3000/register
+  ```
+  * Authentication (POST)
+  ```
+  http://localhost:3000/auth
+  ```
+  * Search by ID (GET)
+  ```
+  https://localhost:3000/clients/:id
+  ```
+  * Update by ID (POST)
+  ```
+  https://localhost:3000/clients
+  ```
+  * Insert (PUT)
+  ```
+  https://localhost:3000/clients
+  ```
+- Categories of Items
+  * Search all (GET)
+  ```
+  http://localhost:3000/categories
+  ```
+  * Search by ID (GET)
+  ```
+  http://localhost:3000/categories/:id
+  ```
+  * Delete by ID (DELETE)
+  ```
+  http://localhost:3000/categories/:id
+  ```
+  * Update by ID (POST)
+  ```
+  http://localhost:3000/categories
+  ```
+  * Insert (PUT)
+  ```
+  http://localhost:3000/categories
+  ```
+- Items
+  * Search by ID (GET)
+  ```
+  http://localhost:3000/items/:id
+  ```
+  * Search by Category (GET)
+  ```
+  http://localhost:3000/items/category/:categoryDescription
+  ```
+  * Delete by ID (DELETE)
+  ```
+  http://localhost:3000/items/:id
+  ```
+  * Update by ID (POST)
+  ```
+  http://localhost:3000/items
+  ```
+  * Insert (PUT)
+  ```
+  http://localhost:3000/items
+  ```
+- Lendings
+  * Search by ID (GET)
+  ```
+  http://localhost:3000/lendings/:id
+  ```
+  * Search by Client (GET)
+  ```
+  http://localhost:3000/lendings/clients/:id
+  ```
+  * Delete by ID (DELETE)
+  ```
+  http://localhost:3000/lendings/:id
+  ```
+  * Update by ID (UPDATE)
+  ```
+  http://localhost:3000/lendings
+  ```
+  * Insert (INSERT)
+  ```
+  http://localhost:3000/lendings/
+  ```
+- Lending Items
+  * Search by ID (GET)
+  ```
+  ```
+  * Delete by ID (DELETE)
+  ```
+  ```
+  * Insert (PUT)
+  ```
+  ```
 
 ```
 Give an example
