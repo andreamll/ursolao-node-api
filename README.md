@@ -35,7 +35,7 @@ Start the project:
 npm run start
 ```
 
-## Running the tests
+### Running the tests
 
 A web page should open in your default browser. If not, just go to: http://localhost:3000/
 
