@@ -50,6 +50,23 @@ http://localhost:3000
   * Register (GET)
   ```
   http://localhost:3000/register
+  
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 500
+   * "token"
   ```
   * Authentication (POST)
   ```
@@ -133,25 +150,16 @@ http://localhost:3000
 - Lending Items
   * Search by ID (GET)
   ```
+  http://localhost:3000/lendings/items/:id
   ```
   * Delete by ID (DELETE)
   ```
+  http://localhost:3000/lendings/items/
   ```
   * Insert (PUT)
   ```
+  http://localhost:3000/lendings/items/
   ```
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## Version
 
