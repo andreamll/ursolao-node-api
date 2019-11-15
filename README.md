@@ -43,7 +43,7 @@ npm run start
 
 A web page should open in your default browser. If not, just go to: http://localhost:3000/ to see if the API is alive.
 
-All the endpoints are listed below. You can test then using [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop).
+All the endpoints are listed below. You can test them using [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop).
 
 
 ## Endpoints
