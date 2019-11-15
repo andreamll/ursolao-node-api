@@ -71,94 +71,468 @@ http://localhost:3000
   * Authentication (POST)
   ```
   http://localhost:3000/auth
+  
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Search by ID (GET)
   ```
   https://localhost:3000/clients/:id
+  
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Update by ID (POST)
   ```
   https://localhost:3000/clients
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Insert (PUT)
   ```
   https://localhost:3000/clients
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
 - Categories of Items
   * Search all (GET)
   ```
   http://localhost:3000/categories
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Search by ID (GET)
   ```
   http://localhost:3000/categories/:id
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Delete by ID (DELETE)
   ```
   http://localhost:3000/categories/:id
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Update by ID (POST)
   ```
   http://localhost:3000/categories
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Insert (PUT)
   ```
   http://localhost:3000/categories
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
 - Items
   * Search by ID (GET)
   ```
   http://localhost:3000/items/:id
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Search by Category (GET)
   ```
   http://localhost:3000/items/category/:categoryDescription
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Delete by ID (DELETE)
   ```
   http://localhost:3000/items/:id
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Update by ID (POST)
   ```
   http://localhost:3000/items
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Insert (PUT)
   ```
   http://localhost:3000/items
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
 - Lendings
   * Search by ID (GET)
   ```
   http://localhost:3000/lendings/:id
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Search by Client (GET)
   ```
   http://localhost:3000/lendings/clients/:id
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Delete by ID (DELETE)
   ```
   http://localhost:3000/lendings/:id
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Update by ID (UPDATE)
   ```
   http://localhost:3000/lendings
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Insert (INSERT)
   ```
   http://localhost:3000/lendings/
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
 - Lending Items
   * Search by ID (GET)
   ```
   http://localhost:3000/lendings/items/:id
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Delete by ID (DELETE)
   ```
   http://localhost:3000/lendings/items/
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
   * Insert (PUT)
   ```
   http://localhost:3000/lendings/items/
+    
+  Parameters:
+  - Header:
+   * Content-Type = application/json
+   
+  - Body:
+   * name
+   * email
+   * password
+   * countrycode
+   * areacode
+   * telephone
+   * zipcode
+   
+  - Output:
+   * HTTP Status Code: 200 / 404 / 500
+   * "token"
   ```
 
 ## Version
