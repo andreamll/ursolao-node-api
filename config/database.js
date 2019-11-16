@@ -3,18 +3,6 @@
 // OBJETIVO: ARMAZENA DADOS PARA ACESSO AO BD
 //----------
 
-/*
-module.exports = {
-    user: "root",
-    password: "@Ursolao1",
-    database: "ursolao",
-    host: "127.0.0.1",
-    dialect: "mysql",
-    port: 3306,
-    connectionLimit: 10,
-};
-*/
-
 module.exports = {
     user: "root",
     password: "!Ursolao1",
