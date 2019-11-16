@@ -9,7 +9,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Check if you can access the database. In case of disaster, don't worry, you can test with: https://ursolao-api.herokuapp.com
+Check if you can access the database. In case of disaster, don't panic, you can test accessing: https://ursolao-api.herokuapp.com
 ```
 telnet ursolao.cbuk8awyqduu.us-east-1.rds.amazonaws.com 3306
 ```
