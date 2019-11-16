@@ -2,7 +2,7 @@
 
 A REST API package for "Clube do Ursolão" Project.
 
-[Node JS; MySQL; AWS; Heroku]
+###### Node JS; MySQL; AWS; Heroku
 
 
 ## Getting Started
