@@ -94,7 +94,7 @@ CREATE TABLE `clients_items` (
   KEY `cli_code` USING BTREE (`cli_code`),
   KEY `clients_items_fk2` USING BTREE (`itm_code`),
   KEY `clients_items_fk3` USING BTREE (`sta_code`),
-  CONSTRAINT `clients_items_fk1` FOREIGN KEY (`cli_code`) REFERENCES `clients_items` (`cli_code`),
+  CONSTRAINT `clients_items_fk1` FOREIGN KEY (`cli_code`) REFERENCES `clients` (`cli_code`),
   CONSTRAINT `clients_items_fk2` FOREIGN KEY (`itm_code`) REFERENCES `items` (`itm_code`),
   CONSTRAINT `clients_items_fk3` FOREIGN KEY (`sta_code`) REFERENCES `status` (`sta_code`)
 ) ENGINE=InnoDB

@@ -29,6 +29,16 @@ insert into clients_items values (3,4,'ENA');
 insert into clients_items values (3,5,'DIS');
 insert into clients_items values (3,6,'ENA');
 
+select * from lendings;
+insert into lendings (lnd_cliowner, lnd_clirequester, lnd_startdate, lnd_enddate, lnd_grntmrg, sta_code) values (1,2,'20191101','20191130',10,'ENA');
+insert into lendings (lnd_cliowner, lnd_clirequester, lnd_startdate, lnd_enddate, lnd_grntmrg, sta_code) values (2,3,'20191101','20191130',10,'ENA');
+insert into lendings (lnd_cliowner, lnd_clirequester, lnd_startdate, lnd_enddate, lnd_grntmrg, sta_code) values (1,4,'20191101','20191130',10,'ENA');
+delete from lendings where lnd_code = 1;
+
+select * from lendings_items;
+insert into lendings_items value (2,1,'ENA');
+insert into lendings_items value (3,2,'ENA');
+insert into lendings_items value (4,1,'ENA');
 
 
 
