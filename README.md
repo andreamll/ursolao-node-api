@@ -56,7 +56,7 @@ All the endpoints are listed below. You can test them using [Postman](https://ch
 http://localhost:3000
 ```
 - Clients
-  * Register (GET)
+  * Register (POST)
   ```
   http://localhost:3000/register
   
