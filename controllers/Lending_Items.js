@@ -14,7 +14,7 @@ class LendingItems {
         lendingItemsModel.getById(request.params.id)
         .then( data => {
             if (data.length > 0) {
-                response.json(data);                
+                response.json(data[0]);                
             } else {
                 response.sendStatus(404);
                 console.log('Borrowed item not found. ID: ', request.params.id);
@@ -28,7 +28,7 @@ class LendingItems {
 
     //exclui item do emprestimo por ID
     static delete(request, response) {
-console.log(request.body.id);
+        
         lendingItemsModel.getById(request.body.id)
         .then( data => {
             if (data.length > 0) {
@@ -48,7 +48,6 @@ console.log(request.body.id);
                 //chama rotina para atualizacao dos dados
                 lendingItemsModel.delete(conditions)   
                 response.sendStatus(200);
-                console.log('Borrowed item has been deleted. ID: ', request.body.id,'Item: ', request.body.item);            
             } else {
                 response.sendStatus(404);
                 console.log('Lending not found. ID: ', request.body.id);
@@ -83,8 +82,7 @@ console.log(request.body.id);
         //chama rotina para inclusao dos dados
         lendingItemsModel.insert(conditions)   
         .then( _ => {
-            response.sendStatus(200);
-            console.log('Borrowed item has been inserted');           
+            response.sendStatus(200);          
         })
         .catch(err => {
             response.sendStatus(500);

@@ -14,7 +14,7 @@ class Categories {
         categoriesModel.get()
         .then( data => {
             if (data.length > 0) {
-                response.json(data);                
+                response.json(data[0]);                
             } else {
                 response.sendStatus(404);
                 console.log('Categories not found');
@@ -33,7 +33,7 @@ class Categories {
         categoriesModel.getById(request.params.id)
         .then( data => {
             if (data.length > 0) {
-                response.json(data);                
+                response.json(data[0]);                
             } else {
                 response.sendStatus(404);
                 console.log('Category not found. ID: ', request.params.id);
@@ -70,8 +70,7 @@ class Categories {
 
                 //chama rotina para atualizacao dos dados
                 categoriesModel.update(conditions)   
-                response.sendStatus(200);
-                console.log('Category has been updated. ID: ', request.body.id);            
+                response.sendStatus(200);           
             } else {
                 response.sendStatus(404);
                 console.log('Category not found. ID: ', request.body.id);
@@ -91,8 +90,7 @@ class Categories {
         .then( data => {
             if (data.length > 0) {
                 categoriesModel.delete(request.params.id)   
-                response.sendStatus(200);
-                console.log('Category has been deleted. ID: ', request.params.id);            
+                response.sendStatus(200);           
             } else {
                 response.sendStatus(404);
                 console.log('Category not found. ID: ', request.params.id);
@@ -123,8 +121,7 @@ class Categories {
         //chama rotina para inclusao dos dados
         categoriesModel.insert(conditions)   
         .then( _ => {
-            response.sendStatus(200);
-            console.log('Category has been inserted');           
+            response.sendStatus(200);        
         })
         .catch(err => {
             response.sendStatus(500);

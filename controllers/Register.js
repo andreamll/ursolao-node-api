@@ -44,16 +44,12 @@ class Register {
             },
         ];
 
-        console.log("request.body.email", request.body.email);
-        console.log("request.body.password", request.body.password);
-
         clientsModel.insert(conditions)
         .then( data => {
 
             clientsModel.auth(conditions)
             .then( data => {
                 response.sendStatus(200);
-                console.log('Client has been registered: ', request.body.email);
             })
 
          })

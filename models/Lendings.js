@@ -9,15 +9,18 @@ const util = require('util')
 class Lendings{
 
     getById(id) { 
-        return pool.query('SELECT * FROM lendings WHERE lnd_code = ' + id);
+        const strSQL = "CALL sps_lendings(" + id + ", null)" ;
+        return pool.query(strSQL);
     };
 
     getByClient(id) { 
-        return pool.query('SELECT * FROM lendings WHERE (lnd_cliowner = ' + id + ' OR lnd_clirequester = ' + id + ')' );
+        const strSQL = "CALL sps_lendings(null, " + id +")" ;
+        return pool.query(strSQL);
     };
 
     delete(id) { 
-        return pool.query('DELETE FROM lendings WHERE lnd_code = ' + id);
+        const strSQL = "CALL spd_lendings(" + id + ")" ;
+        return pool.query(strSQL);
     };
 
     update(conditions = []) { 
@@ -48,15 +51,7 @@ class Lendings{
             }
         );
 
-        const strSQL = "UPDATE lendings SET "
-                        + "lnd_cliowner = " + cliowner
-                        + ", lnd_clirequester = " + clirequester
-                        + ", lnd_startdate = '" + startdate
-                        + "', lnd_enddate = '" + enddate
-                        + "', lnd_grntmrg = " + grntmrg
-                        + ", sta_code = " + status
-                        + " WHERE lnd_code = " + id
-
+        const strSQL = "CALL spu_lendings(" + id + "," + cliowner + "," + clirequester + ",'" + startdate + "','"  + enddate + "'," + grntmrg + ",'" + status + "')" ;
         return pool.query(strSQL);
     };
 
@@ -85,15 +80,7 @@ class Lendings{
             }
         );
 
-        const strSQL = "INSERT INTO lendings (lnd_cliowner, lnd_clirequester, lnd_startdate, lnd_enddate, lnd_grntmrg, sta_code) VALUES ("
-                        + "'" + cliowner 
-                        + "','" + clirequester
-                        + "','" + startdate
-                        + "','" + enddate
-                        + "'," + grntmrg
-                        + ",'" + status
-                        + "')"
-
+        const strSQL = "CALL spi_lendings(" + cliowner + "," + clirequester + ",'" + startdate + "','"  + enddate + "'," + grntmrg + ",'" + status + "')" ;
         return pool.query(strSQL);
     };
     

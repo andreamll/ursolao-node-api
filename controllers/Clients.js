@@ -14,7 +14,7 @@ class Clients {
         clientsModel.getById(request.params.id)
         .then( data => {
             if (data.length > 0) {
-                response.json(data);                
+                response.json(data[0]);                
             } else {
                 response.sendStatus(404);
                 console.log('Client not found. ID: ', request.params.id);
@@ -71,8 +71,7 @@ class Clients {
 
                 //chama rotina para atualizacao dos dados
                 clientsModel.update(conditions)   
-                response.sendStatus(200);
-                console.log('Client has been updated. ID: ', request.body.id);            
+                response.sendStatus(200);           
             } else {
                 response.sendStatus(404);
                 console.log('Client not found. ID: ', request.body.id);
@@ -124,7 +123,6 @@ class Clients {
         clientsModel.insert(conditions)   
         .then( _ => {
             response.sendStatus(200);
-            console.log('Client has been inserted');           
         })
         .catch(err => {
             response.sendStatus(500);

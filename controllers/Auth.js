@@ -26,16 +26,12 @@ class Auth {
             },
         ];
 
-        console.log("request.body.email", request.body.email);
-        console.log("request.body.password", request.body.password)
-
         clientsModel.auth(conditions)
         .then( data => {
 
             if (data.length > 0) {
                 const id = data[0].id;
                 response.json({ token: createToken( {id}, 43200 ) });
-                console.log('Token has been created. ID: ', id);  
 
             } else {
 

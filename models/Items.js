@@ -8,20 +8,23 @@ const util = require('util')
 
 class Items{
 
-    getById(id) { 
-        return pool.query('SELECT * FROM items WHERE itm_code = ' + id);
+    getById(id) {
+        const strSQL = "CALL sps_items(" + id + ", null, null)" ;
+        return pool.query(strSQL);
     };
 
     getByCategory(id) { 
-        return pool.query("SELECT * FROM items I, categories_items C WHERE I.cai_code = C.cai_code AND c.cai_descr = '" + id + "'");
+        const strSQL = "CALL sps_items(null," + id + ",null)" ;
+        return pool.query(strSQL);
     };
 
     delete(id) { 
-        return pool.query('DELETE FROM items WHERE itm_code = ' + id);
+        const strSQL = "CALL spd_items(" + id + ")" ;
+        return pool.query(strSQL);
     };
 
     update(conditions = []) { 
-
+        
         var id;
         var title;
         var descr;
@@ -42,13 +45,7 @@ class Items{
             }
         );
 
-        const strSQL = "UPDATE items SET "
-                        + "itm_title = '" + title
-                        + "', itm_descr = '" + descr
-                        + "', itm_photo = '" + photo
-                        + "', cai_code = " + category
-                        + " WHERE itm_code = " + id
-
+        const strSQL = "CALL spu_items(" + id + ", '" + title + "', '" + descr + "', '" + photo + "', " + category + ")" ;
         return pool.query(strSQL);
     };
 
@@ -71,13 +68,7 @@ class Items{
             }
         );
 
-        const strSQL = "INSERT INTO items (itm_title, itm_descr, itm_photo, cai_code) VALUES ("
-                        + "'" + title 
-                        + "','" + descr
-                        + "','" + photo
-                        + "'," + category
-                        + ")"
-console.log(strSQL)
+        const strSQL = "CALL spi_items('" + title + "', '" + descr + "', '" + photo + "', " + category + ")" ;
         return pool.query(strSQL);
     };
     

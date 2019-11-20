@@ -14,7 +14,7 @@ class Lendings {
         lendingsModel.getById(request.params.id)
         .then( data => {
             if (data.length > 0) {
-                response.json(data);                
+                response.json(data[0]);                
             } else {
                 response.sendStatus(404);
                 console.log('Lending not found. ID: ', request.params.id);
@@ -32,7 +32,7 @@ class Lendings {
         lendingsModel.getByClient(request.params.client)
         .then( data => {
             if (data.length > 0) {
-                response.json(data);                
+                response.json(data[0]);                
             } else {
                 response.sendStatus(404);
                 console.log('Lendings not found. Client: ', request.params.client);
@@ -85,8 +85,7 @@ class Lendings {
 
                 //chama rotina para atualizacao dos dados
                 lendingsModel.update(conditions)   
-                response.sendStatus(200);
-                console.log('Lending has been updated. ID: ', request.body.id);            
+                response.sendStatus(200);          
             } else {
                 response.sendStatus(404);
                 console.log('Lending not found. ID: ', request.body.id);
@@ -106,8 +105,7 @@ class Lendings {
         .then( data => {
             if (data.length > 0) {
                 lendingsModel.delete(request.params.id)   
-                response.sendStatus(200);
-                console.log('Lending has been deleted. ID: ', request.params.id);            
+                response.sendStatus(200);         
             } else {
                 response.sendStatus(404);
                 console.log('Lending not found. ID: ', request.params.id);
@@ -154,8 +152,7 @@ class Lendings {
         //chama rotina para inclusao dos dados
         lendingsModel.insert(conditions)   
         .then( _ => {
-            response.sendStatus(200);
-            console.log('Lending has been inserted');           
+            response.sendStatus(200);          
         })
         .catch(err => {
             response.sendStatus(500);

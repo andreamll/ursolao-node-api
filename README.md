@@ -103,16 +103,16 @@ http://localhost:3000
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "cli_code"
-   * "cli_name"
-   * "cli_email"
-   * "cli_password"
-   * "cli_countrycode"
-   * "cli_areacode"
-   * "cli_telephone"
-   * "cli_zipcode"
-   * "cli_reputation"
-   * "cli_lastlogin"
+   * "code"
+   * "name"
+   * "email"
+   * "password"
+   * "countrycode"
+   * "areacode"
+   * "telephone"
+   * "zipcode"
+   * "reputation"
+   * "lastlogin"
   ```
   * Update by ID (POST)
   ```
@@ -169,9 +169,9 @@ http://localhost:3000
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "cai_code"
-   * "cai_descr"
-   * "sta_code"
+   * "code"
+   * "descr"
+   * "status"
   ```
   * Search by ID (GET)
   ```
@@ -184,9 +184,9 @@ http://localhost:3000
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "cai_code"
-   * "cai_descr"
-   * "sta_code"
+   * "code"
+   * "descr"
+   * "status"
   ```
   * Delete by ID (DELETE)
   ```
@@ -245,15 +245,17 @@ http://localhost:3000
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "itm_code"
-   * "itm_title"
-   * "itm_descr"
-   * "itm_photo"
-   * "cai_code"
+   * "code"
+   * "title"
+   * "descr"
+   * "photo"
+   * "category"
+   * "category_descr"
+   * "status"
   ```
   * Search by Category (GET)
   ```
-  http://localhost:3000/items/category/:categoryDescription
+  http://localhost:3000/items/category/:category
     
   Parameters:
   - Header:
@@ -262,13 +264,13 @@ http://localhost:3000
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "itm_code"
-   * "itm_title"
-   * "itm_descr"
-   * "itm_photo"
-   * "cai_code"
-   * "cai_descr"
-   * "sta_code"
+   * "code"
+   * "title"
+   * "descr"
+   * "photo"
+   * "category"
+   * "category_descr"
+   * "status"
   ```
   * Delete by ID (DELETE)
   ```
@@ -282,7 +284,7 @@ http://localhost:3000
   - Output:
    * HTTP Status Code: 200 / 404 / 500
   ```
-  * Update by ID (POST)
+  * Update by ID (PUT)
   ```
   http://localhost:3000/items
     
@@ -301,7 +303,7 @@ http://localhost:3000
   - Output:
    * HTTP Status Code: 200 / 404 / 500
   ```
-  * Insert (PUT)
+  * Insert (POST)
   ```
   http://localhost:3000/items
     
@@ -331,13 +333,15 @@ http://localhost:3000
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "lnd_code"
-   * "lnd_cliowner"
-   * "lnd_clirequester"
-   * "lnd_startdate"
-   * "lnd_enddate"
-   * "lnd_grntmrg"
-   * "sta_code"
+   * "code"
+   * "cliowner"
+   * "nameowner"
+   * "clirequester"
+   * "namerequester"
+   * "startdate"
+   * "enddate"
+   * "grntmrg"
+   * "status"
   ```
   * Search by Client (GET)
   ```
@@ -350,13 +354,15 @@ http://localhost:3000
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "lnd_code"
-   * "lnd_cliowner"
-   * "lnd_clirequester"
-   * "lnd_startdate"
-   * "lnd_enddate"
-   * "lnd_grntmrg"
-   * "sta_code"
+   * "code"
+   * "cliowner"
+   * "nameowner"
+   * "clirequester"
+   * "namerequester"
+   * "startdate"
+   * "enddate"
+   * "grntmrg"
+   * "status"
   ```
   * Delete by ID (DELETE)
   ```
@@ -370,7 +376,7 @@ http://localhost:3000
   - Output:
    * HTTP Status Code: 200 / 404 / 500
   ```
-  * Update by ID (UPDATE)
+  * Update by ID (PUT)
   ```
   http://localhost:3000/lendings
     
@@ -391,7 +397,7 @@ http://localhost:3000
   - Output:
    * HTTP Status Code: 200 / 404 / 500
   ```
-  * Insert (INSERT)
+  * Insert (POST)
   ```
   http://localhost:3000/lendings/
     
@@ -423,9 +429,13 @@ http://localhost:3000
    
   - Output:
    * HTTP Status Code: 200 / 404 / 500
-   * "lnd_code"
-   * "itm_code"
-   * "sta_code"
+   * "code"
+   * "item"
+   * "title"
+   * "descr"
+   * "photo"
+   * "category"
+   * "category_descr"
   ```
   * Delete by ID (DELETE)
   ```
@@ -443,7 +453,7 @@ http://localhost:3000
   - Output:
    * HTTP Status Code: 200 / 404 / 500
   ```
-  * Insert (PUT)
+  * Insert (POST)
   ```
   http://localhost:3000/lendings/items/
     
