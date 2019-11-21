@@ -114,7 +114,7 @@ http://localhost:3000
    * "reputation"
    * "lastlogin"
   ```
-  * Update by ID (POST)
+  * Update by ID (PUT)
   ```
   https://localhost:3000/clients
     
@@ -136,7 +136,7 @@ http://localhost:3000
   - Output:
    * HTTP Status Code: 200 / 404 / 500
   ```
-  * Insert (PUT)
+  * Insert (POST)
   ```
   https://localhost:3000/clients
     
@@ -200,7 +200,7 @@ http://localhost:3000
   - Output:
    * HTTP Status Code: 200 / 404 / 500
   ```
-  * Update by ID (POST)
+  * Update by ID (PUT)
   ```
   http://localhost:3000/categories
     
@@ -217,7 +217,7 @@ http://localhost:3000
   - Output:
    * HTTP Status Code: 200 / 404 / 500
   ```
-  * Insert (PUT)
+  * Insert (POST)
   ```
   http://localhost:3000/categories
     
