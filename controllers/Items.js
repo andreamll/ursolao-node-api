@@ -14,7 +14,7 @@ class Items {
         itemsModel.getById(request.params.id)
         .then( data => {
             if (data.length > 0) {
-                response.json(data[0]);                
+                response.json(data);                
             } else {
                 response.sendStatus(404);
                 console.log('Item not found. ID: ', request.params.id);
@@ -29,10 +29,12 @@ class Items {
     //lista item por categoria
     static getByCategory(request, response) {
 
+        console.log(request.params.category);
+
         itemsModel.getByCategory(request.params.category)
         .then( data => {
             if (data.length > 0) {
-                response.json(data[0]);                
+                response.json(data);                
             } else {
                 response.sendStatus(404);
                 console.log('Items not found. Category: ', request.params.category);
@@ -77,7 +79,8 @@ class Items {
 
                 //chama rotina para atualizacao dos dados
                 itemsModel.update(conditions)   
-                response.sendStatus(200);          
+                response.sendStatus(200);
+                console.log('Item has been updated. ID: ', request.body.id);            
             } else {
                 response.sendStatus(404);
                 console.log('Item not found. ID: ', request.body.id);
@@ -97,7 +100,8 @@ class Items {
         .then( data => {
             if (data.length > 0) {
                 itemsModel.delete(request.params.id)   
-                response.sendStatus(200);   
+                response.sendStatus(200);
+                console.log('Item has been deleted. ID: ', request.params.id);            
             } else {
                 response.sendStatus(404);
                 console.log('Item not found. ID: ', request.params.id);
@@ -136,7 +140,8 @@ class Items {
         //chama rotina para inclusao dos dados
         itemsModel.insert(conditions)   
         .then( _ => {
-            response.sendStatus(200);      
+            response.sendStatus(200);
+            console.log('Item has been inserted');           
         })
         .catch(err => {
             response.sendStatus(500);
