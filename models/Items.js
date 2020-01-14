@@ -8,23 +8,42 @@ const util = require('util')
 
 class Items{
 
-    getById(id) {
-        const strSQL = "CALL sps_items(" + id + ", null, null)" ;
-        return pool.query(strSQL);
+    getById(id) { 
+        return pool.query('SELECT * FROM items WHERE itm_code = ' + id);
     };
 
     getByCategory(id) { 
-        const strSQL = "CALL sps_items(null," + id + ",null)" ;
-        return pool.query(strSQL);
+        var sql;
+
+        sql = ""
+        sql = sql + "SELECT	ITM.itm_code 		as ID "
+        sql = sql + ",		ITM.itm_title 		as Title "
+        sql = sql + ",		'Av. Paulista, 100'	as Address "
+        sql = sql + ",		ITM.itm_photo		as Photo "
+        sql = sql + ",		STA.sta_descr		as Status "
+        sql = sql + ",		CLI.cli_code		as Owner_ID "
+        sql = sql + ",		CLI.cli_name		as Owner_Name "
+        sql = sql + "FROM 	items 				ITM "
+        sql = sql + ", 		categories_items 	CAT "
+        sql = sql + ",		clients_items		CIT "
+        sql = sql + ",		clients				CLI "
+        sql = sql + ",		status				STA "
+        sql = sql + "WHERE 	ITM.cai_code 		= CAT.cai_code " 
+        sql = sql + "AND	ITM.itm_code		= CIT.cli_code "
+        sql = sql + "AND	CIT.cli_code		= CLI.cli_code "
+        sql = sql + "AND	CAT.sta_code		= STA.sta_code "
+        sql = sql + "AND	CAT.sta_code 		= 'ENA' "
+        sql = sql + "AND 	ucase(CAT.cai_descr) = '" + id.toUpperCase() + "'"
+
+        return pool.query(sql);
     };
 
     delete(id) { 
-        const strSQL = "CALL spd_items(" + id + ")" ;
-        return pool.query(strSQL);
+        return pool.query('DELETE FROM items WHERE itm_code = ' + id);
     };
 
     update(conditions = []) { 
-        
+
         var id;
         var title;
         var descr;
@@ -45,7 +64,13 @@ class Items{
             }
         );
 
-        const strSQL = "CALL spu_items(" + id + ", '" + title + "', '" + descr + "', '" + photo + "', " + category + ")" ;
+        const strSQL = "UPDATE items SET "
+                        + "itm_title = '" + title
+                        + "', itm_descr = '" + descr
+                        + "', itm_photo = '" + photo
+                        + "', cai_code = " + category
+                        + " WHERE itm_code = " + id
+
         return pool.query(strSQL);
     };
 
@@ -68,7 +93,13 @@ class Items{
             }
         );
 
-        const strSQL = "CALL spi_items('" + title + "', '" + descr + "', '" + photo + "', " + category + ")" ;
+        const strSQL = "INSERT INTO items (itm_title, itm_descr, itm_photo, cai_code) VALUES ("
+                        + "'" + title 
+                        + "','" + descr
+                        + "','" + photo
+                        + "'," + category
+                        + ")"
+console.log(strSQL)
         return pool.query(strSQL);
     };
     

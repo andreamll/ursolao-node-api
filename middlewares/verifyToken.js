@@ -27,6 +27,7 @@ module.exports = (request, response, next) => {
                 .send({ error });
         }
 
+        console.log(decoded);
         next();
     });    
 }

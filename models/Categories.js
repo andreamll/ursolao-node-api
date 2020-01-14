@@ -9,15 +9,15 @@ const util = require('util')
 class Categories{
     
     get() { 
-        return pool.query("CALL sps_categories_items(null)");
+        return pool.query('SELECT * FROM categories_items');
     };
 
     getById(id) { 
-        return pool.query("CALL sps_categories_items(" + id + ")");
+        return pool.query('SELECT * FROM categories_items WHERE cai_code = ' + id);
     };
 
     delete(id) { 
-        return pool.query("CALL spd_categories_items(" + id + ")");
+        return pool.query('DELETE FROM categories_items WHERE cai_code = ' + id);
     };
 
     update(conditions = []) { 
@@ -36,7 +36,16 @@ class Categories{
             }
         );
 
-        const strSQL = "CALL spu_categories_items(" + id + ", '" + descr + "','" + status + "')"
+        console.log ("id", id);
+        console.log ("descr", descr);
+        console.log ("status", status);
+
+        const strSQL = "UPDATE categories_items SET cai_descr = '" + descr 
+                        + "', sta_code = '" + status 
+                        + "' WHERE cai_code = " + id
+
+        console.log ("sql",strSQL);
+
         return pool.query(strSQL);
     };
 
@@ -53,7 +62,11 @@ class Categories{
             }
         );
 
-        const strSQL = "CALL spi_categories_items('" + descr + "','" + status + "')"
+        const strSQL = "INSERT INTO categories_items (cai_descr, sta_code) VALUES ("
+                        + "'" + descr 
+                        + "','" + status 
+                        + "')"
+
         return pool.query(strSQL);
     };
     
