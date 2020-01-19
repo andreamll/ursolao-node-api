@@ -17,6 +17,9 @@ router.get('/:id', Items.getById);
 //-- lista item por Categoria
 router.get('/category/:category', Items.getByCategory);
 
+//-- lista item por Cliente
+router.get('/client/:client', Items.getByUserID);
+
 //-- atualiza item por ID
 router.put('/', Items.update);
 

@@ -9,8 +9,7 @@ const util = require('util')
 class Lendings{
 
     getById(id) { 
-        const strSQL = "CALL sps_lendings_items(" + id + ")" ;
-        return pool.query(strSQL);
+        return pool.query('SELECT * FROM lendings_items WHERE lnd_code = ' + id);
     };
 
     delete(conditions = []) { 
@@ -26,7 +25,7 @@ class Lendings{
             }
         );
 
-        const strSQL = "CALL spd_lendings_items(" + id + "," + item + ")" ;
+        const strSQL = 'DELETE FROM lendings_items WHERE lnd_code = ' + id + ' AND itm_code = ' + item ;
         return pool.query(strSQL);
     };
 
@@ -46,7 +45,30 @@ class Lendings{
             }
         );
 
-        const strSQL = "CALL spi_lendings_items(" + id + "," + item + ", '" + status + "')" ; 
+        const strSQL = "INSERT INTO lendings_items (lnd_code, itm_code, sta_code) VALUES ("
+                        + id 
+                        + "," + item
+                        + ",'" + status
+                        + "')"
+
+        return pool.query(strSQL);
+    };
+
+    update(conditions = []) { 
+
+        var id;
+        var item;
+
+        conditions.forEach( ({ field, value }) => {
+                if (field === "id")
+                    id = value;
+                if (field === "item")
+                    item = value;
+            }
+        );
+
+        const strSQL = "UPDATE lendings_items SET sta_code = 'DIS' WHERE lnd_code = " + id + " AND  itm_code = " + item
+
         return pool.query(strSQL);
     };
     

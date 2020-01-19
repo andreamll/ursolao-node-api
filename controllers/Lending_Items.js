@@ -14,7 +14,7 @@ class LendingItems {
         lendingItemsModel.getById(request.params.id)
         .then( data => {
             if (data.length > 0) {
-                response.json(data[0]);                
+                response.json(data);                
             } else {
                 response.sendStatus(404);
                 console.log('Borrowed item not found. ID: ', request.params.id);
@@ -28,7 +28,7 @@ class LendingItems {
 
     //exclui item do emprestimo por ID
     static delete(request, response) {
-        
+
         lendingItemsModel.getById(request.body.id)
         .then( data => {
             if (data.length > 0) {
@@ -48,6 +48,7 @@ class LendingItems {
                 //chama rotina para atualizacao dos dados
                 lendingItemsModel.delete(conditions)   
                 response.sendStatus(200);
+                console.log('Borrowed item has been deleted. ID: ', request.body.id,'Item: ', request.body.item);            
             } else {
                 response.sendStatus(404);
                 console.log('Lending not found. ID: ', request.body.id);
@@ -56,6 +57,42 @@ class LendingItems {
         .catch(err => {
             response.sendStatus(500);
             console.log('Error deleting borrowed item by ID: ', request.body.id, err);
+        });
+        
+    }
+
+
+    //atualiza devoluvao do item do emprestimo por ID
+    static update(request, response) {
+
+        lendingItemsModel.getById(request.body.id)
+        .then( data => {
+            if (data.length > 0) {
+
+                //recupera do body os campos que serao excluidos da tabela
+                const conditions = [
+                    {
+                        field:          'id',
+                        value:          request.body.id
+                    },
+                    {
+                        field:          'item',
+                        value:          request.body.item
+                    },
+                ];
+
+                //chama rotina para atualizacao dos dados
+                lendingItemsModel.update(conditions)   
+                response.sendStatus(200);
+                console.log('Borrowed item has been updated. ID: ', request.body.id,'Item: ', request.body.item);            
+            } else {
+                response.sendStatus(404);
+                console.log('Lending not found. ID: ', request.body.id);
+            }
+         })
+        .catch(err => {
+            response.sendStatus(500);
+            console.log('Error updating borrowed item by ID: ', request.body.id, err);
         });
         
     }
@@ -82,7 +119,8 @@ class LendingItems {
         //chama rotina para inclusao dos dados
         lendingItemsModel.insert(conditions)   
         .then( _ => {
-            response.sendStatus(200);          
+            response.sendStatus(200);
+            console.log('Borrowed item has been inserted');           
         })
         .catch(err => {
             response.sendStatus(500);

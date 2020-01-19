@@ -17,6 +17,9 @@ router.get('/:id', Lending_Items.getById);
 //-- exclui item do emprestimo por ID
 router.delete('/', Lending_Items.delete);
 
+//-- atualiza devoluvao do item do emprestimo por ID
+router.put('/', Lending_Items.update);
+
 //-- inclui item no emprestimo
 router.post('/', Lending_Items.insert);
 
