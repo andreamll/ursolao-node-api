@@ -180,6 +180,8 @@ class Items{
         var descr;
         var photo;
         var category;
+        var client;
+        var item;
 
         conditions.forEach( ({ field, value }) => {
             if (field === "title")
@@ -190,16 +192,30 @@ class Items{
                 photo = value;
             if (field === "category")
                 category = value;
+            if (field === "id")
+                client = value;
             }
         );
 
-        const strSQL = "INSERT INTO items (itm_title, itm_descr, itm_photo, cai_code) VALUES ("
-                        + "'" + title 
-                        + "','" + descr
-                        + "','" + photo
-                        + "'," + category
-                        + ")"
-console.log(strSQL)
+        var strSQL = ""
+        strSQL = "INSERT INTO items (itm_title, itm_descr, itm_photo, cai_code) VALUES ("
+                    + "'" + title 
+                    + "','" + descr
+                    + "','" + photo
+                    + "'," + category
+                    + ")"                    
+        pool.query(strSQL);
+
+        strSQL = "INSERT INTO clients_items (cli_code, itm_code, sta_code) "
+                    + "SELECT " + client
+                    + ",      MAX(itm_code) AS Id "
+                    + ",      'ENA' "
+                    + "FROM   items "
+                    + "WHERE  itm_title = '" + title + "'"
+                    + "AND    itm_descr = '" + descr + "'"
+                    + "AND    itm_photo = '" + photo + "'"
+                    + "AND    cai_code = " + category
+                    
         return pool.query(strSQL);
     };
     

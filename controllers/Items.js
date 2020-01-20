@@ -156,6 +156,10 @@ class Items {
                 field:          'category',
                 value:          request.body.category
             },
+            {
+                field:          'id',
+                value:          request.body.id
+            },
         ];
 
         //chama rotina para inclusao dos dados
