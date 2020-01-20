@@ -79,7 +79,7 @@ class Items{
         sql = sql + "INNER JOIN	status					STA "
         sql = sql + "ON			LEN.sta_code			= STA.sta_code "
         sql = sql + "INNER JOIN	categories_items		CAT "
-        sql = sql + "ON			ITM.cai_code			= CAI.cai_code "
+        sql = sql + "ON			ITM.cai_code			= CAT.cai_code "
         sql = sql + "WHERE 		LEN.lnd_cliowner		= CLI.cli_code "
         sql = sql + "AND		LEN.lnd_cliowner 	    = " + id + " "
 
