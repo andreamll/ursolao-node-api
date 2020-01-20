@@ -157,8 +157,8 @@ class Items {
                 value:          request.body.category
             },
             {
-                field:          'id',
-                value:          request.body.id
+                field:          'Owner_ID',
+                value:          request.body.Owner_ID
             },
         ];
 

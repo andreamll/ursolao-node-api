@@ -118,7 +118,8 @@ class Items{
     };
 
     delete(id) { 
-        return pool.query('DELETE FROM items WHERE itm_code = ' + id);
+        //return pool.query('DELETE FROM items WHERE itm_code = ' + id);
+        return pool.query("UPDATE items SET sta_code = 'DIS' WHERE itm_code = " + id);
     };
 
     update(conditions = []) { 
@@ -171,7 +172,7 @@ class Items{
                 photo = value;
             if (field === "category")
                 category = value;
-            if (field === "id")
+            if (field === "Owner_ID")
                 client = value;
             }
         );
