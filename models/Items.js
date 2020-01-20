@@ -112,7 +112,6 @@ class Items{
         sql = sql + "                                WHERE LIT.lnd_code = LEN.lnd_code"
         sql = sql + "                                AND LIT.sta_code = 'ENA'"
         sql = sql + "                                AND LEN.sta_code = 'ENA'"
-        sql = sql + "                                AND LEN.lnd_enddate >= now())"
         
         return pool.query(sql);
     };
