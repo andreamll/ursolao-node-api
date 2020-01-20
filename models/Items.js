@@ -82,7 +82,6 @@ class Items{
         sql = sql + "ON			ITM.cai_code			= CAT.cai_code "
         sql = sql + "WHERE 		LEN.lnd_cliowner 	    = " + id + " "
         sql = sql + "AND        LIT.sta_code            = 'ENA'"
-        sql = sql + "AND        LEN.sta_code            = 'ENA'"
 
         sql = sql + "UNION ALL "
         
@@ -111,8 +110,7 @@ class Items{
         sql = sql + "AND	    ITM.itm_code NOT IN (SELECT LIT.itm_code "
         sql = sql + "                                FROM lendings_items LIT, lendings LEN "
         sql = sql + "                                WHERE LIT.lnd_code = LEN.lnd_code"
-        sql = sql + "                                AND LIT.sta_code = 'ENA'"
-        sql = sql + "                                AND LEN.sta_code = 'ENA')"
+        sql = sql + "                                AND LIT.sta_code = 'ENA')"
         
         return pool.query(sql);
     };
